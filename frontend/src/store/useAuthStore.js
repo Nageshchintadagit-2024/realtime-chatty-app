@@ -37,6 +37,7 @@ export const useAuthStore = create((set, get) => ({
       get().connectSocket();
     } catch (error) {
       toast.error(error.response.data.message);
+      console.log("Error in signup:", error);
     } finally {
       set({ isSigningUp: false });
     }
@@ -52,6 +53,7 @@ export const useAuthStore = create((set, get) => ({
       get().connectSocket();
     } catch (error) {
       toast.error(error.response.data.message);
+      console.log("Error in login:", error);
     } finally {
       set({ isLoggingIn: false });
     }
@@ -65,6 +67,7 @@ export const useAuthStore = create((set, get) => ({
       get().disconnectSocket();
     } catch (error) {
       toast.error(error.response.data.message);
+      console.log("Error in logout:", error);
     }
   },
 
